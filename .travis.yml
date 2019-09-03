@@ -11,6 +11,6 @@ before_script:
 script:
   - echo "test code"
  
- after_success：
+after_success:
   - docker build -t username/alpine .
   - docker push username/appine
