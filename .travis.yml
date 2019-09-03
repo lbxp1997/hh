@@ -1,0 +1,15 @@
+language: bash
+dist: xenial
+
+services:
+  - docker
+
+before_script:
+  - echo "$DOCKER_PASSWORD" |docker login -u "$DOCKER_USERNAME" --password-stdin
+
+script:
+  - echo "test code"
+ 
+ after_success：
+   - docker build -t username/alpine .
+   - docker push username/appine
